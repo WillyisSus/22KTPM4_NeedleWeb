@@ -179,12 +179,12 @@ p{
     }
   
     .header-bar .logo{
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
         position: absolute;
         left: 50%; /* position the left edge of the element at the middle of the parent */
         top: 0.5rem;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0%);
     }
     
     .header-bar .logo img{
