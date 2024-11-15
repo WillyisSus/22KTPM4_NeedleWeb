@@ -1,0 +1,64 @@
+.thread-container{
+    width: 100%;
+    min-width: 390px;
+    max-width: 624px;
+    background-color: white;
+    height: 100%;
+    margin: 0 auto;
+    border: solid 1px #aeaeae;
+    border-radius: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.thread-container::-webkit-scrollbar{
+    display: none;
+    
+}
+
+#thread-display-section{
+    width: fit-content;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+
+#thread-display-section .dropdown{
+    padding: 12px 0; 
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width:700px){
+
+    .thread-container{
+        width: 100%;
+        max-width: 100%;
+        min-width: 390px;
+        background-color: white;
+        border: solid 1px #aeaeae;
+        border-radius: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    
+    .thread-container::-webkit-scrollbar{
+        display: none;
+    }
+    
+    #thread-display-section{
+        width: 100vw;
+        margin: 0 auto;
+        height: calc(100vh - 48px);
+        box-sizing: border-box;
+        padding: 0;
+        
+    }
+
+}
