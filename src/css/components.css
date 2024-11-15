@@ -130,7 +130,7 @@ p{
     }
 }
 
-@media only screen and (max-width:700px){
+@media only screen and (max-width:760px){
     .desktop-navbar{
         width: 100vw;
         max-width: 100vw;
