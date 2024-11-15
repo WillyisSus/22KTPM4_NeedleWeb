@@ -36,6 +36,9 @@ p{
     width: 30%;
     height: 100vh;
     max-width: 219px;
+    position: absolute;
+    top: 0;
+    left: 0;
     border: 1px solid #aeaeae;
     
 }
@@ -107,40 +110,6 @@ p{
     border-radius: 100%;
 }
 
-.thread-container{
-    width: 100%;
-    min-width: 390px;
-    max-width: 624px;
-    background-color: white;
-    height: 100%;
-    margin: 0 auto;
-    border: solid 1px #aeaeae;
-    border-radius: 16px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.thread-container::-webkit-scrollbar{
-    display: none;
-    
-}
-
-#thread-display-section{
-    width: fit-content;
-    margin: 0 auto;
-    height: 100vh;
-    box-sizing: border-box;
-    padding: 0;
-    
-}
-
-#thread-display-section .dropdown{
-    padding: 12px 0; 
-    font-size: 20px;
-    width: fit-content;
-    margin: 0 auto;
-}
 
 @media only screen and (max-width:1140px){
     .desktop-navbar{
@@ -162,19 +131,25 @@ p{
 }
 
 @media only screen and (max-width:700px){
+    .desktop-navbar{
+        width: 100vw;
+        max-width: 100vw;
+        height: 48px;
+        position: fixed;
+        top: calc(100% - 48px);
+        left: 0px;
+        border: 1px solid #aeaeae;
+        background-color: #ffffff;
+        
+    }
     .nav{
         width: 100vw;
-        min-height: 48px;
-        height: fit-content;
-        border: 1px solid #aeaeae;
+        
+        height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        position: fixed;
-        top: calc(100% - 48px);
-        left: 0px;
-        background-color: #ffffff;
     }
     .nav .nav-item{
         margin: 0;
