@@ -35,6 +35,53 @@
     margin: 0 auto;
 }
 
+#postThread .modal-body #create-thread-body{
+    min-height: 80px;
+    width: 100%;
+    min-width: 340px;
+    padding: 8px 4px;
+    border: 0;
+}
+
+#postThread .modal-body #create-thread-body:focus{
+    min-height: 80px;
+    width: 100%;
+    min-width: 340px;
+    outline: 0;
+    padding: 8px 4px;
+    box-sizing: border-box;
+}
+
+#postThread .modal-body label{
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+
+
+#postThread .modal-body label:hover{
+    cursor: pointer;
+    background-color: #dfdfdf;
+    border-radius: 8px;
+}
+
+#postThread .modal-body .image-card{
+    position: relative;
+    max-width: 100%;
+    width: fit-content;
+    margin-top: 2px;
+}
+#postThread .modal-body .image-card button{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+}
+#postThread .modal-body .image-card img{
+    max-width: 100%;
+}
 
 @media only screen and (max-width:760px){
 

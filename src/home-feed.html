@@ -54,6 +54,11 @@
                 </ul>
             </div>
             <!-- Thread area -->
+
+            <!-- type="button"
+                class="btn btn-primary btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#modalId" -->
             <div id="thread-display-section">
                 <div class="dropdown open">
                     <button
@@ -75,8 +80,8 @@
                 </div>
                 
                 <div class="thread-container">
-                    <div class="thread-card d-flex flex-row" >
-                        <div class="avatar-and-follow-icon align-items-center">
+                    <div class="thread-card d-flex flex-row" data-bs-toggle="modal" data-bs-target="#postThread" >
+                        <div class="avatar-and-follow-icon align-items-center ">
                             <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                         </div>
                         <div class="card-content border border-0 d-flex justify-content-between align-items-center">
@@ -326,7 +331,71 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- Modals -->
+             <!--  Modal trigger button  -->
+             
+             
+             <!-- Modal Body-->
+             <div
+                class="modal fade"
+                id="postThread"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="modalTitleId"
+                aria-hidden="true"
+             >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitleId">
+                                Creating thread
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="d-flex flex-row" >
+                                    <div class="avatar-and-follow-icon">
+                                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
+                                    </div>
+                                    <div class="card-content border border-0 d-flex flex-column justify-content-between w-100 px-2">
+                                        <p class="fw-bold d-inline-block my-1">Username</p>
+
+                                        <textarea name="thread-body" placeholder="Needle your thread here..."  id="create-thread-body" maxlength="1000"></textarea>
+                                        
+                                        <div class="image-card">
+                                            <img id="create-thread-body-image" src="" alt="" >
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div>
+                                    <label for="thread-image"><i class="bi bi-image-fill fs-5 me-2"></i>Upload an image</label>
+                                    <input id="thread-image" class="d-none" type="file" accept="image/png, image/jpeg">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-outline-dark"
+                                data-bs-dismiss="modal"
+                                onclick="clearThreadForm()"
+                            >
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-dark">Post</button>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             
         </main>
         <footer>
             <!-- place footer here -->
@@ -345,5 +414,38 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+
+        <!-- Custom script -->
+         <script>
+            let threadInputImage =  document.getElementById("create-thread-body-image");
+            let inputFile =  document.getElementById('thread-image');
+            inputFile.onchange = function(){
+                threadInputImage.src = URL.createObjectURL(inputFile.files[0])
+                // Reveal parent
+                let parentDiv = threadInputImage.parentElement;
+                parentDiv.style.display = "block";
+                let deleteButton = document.createElement('button')
+                deleteButton.className = "btn btn-close";
+                deleteButton.onclick = function(){
+                    threadInputImage.src = "";
+                    parentDiv.style.display = 'none';
+                    this.remove();
+                }
+                parentDiv.appendChild(deleteButton)
+            }
+            
+            function clearThreadForm(){
+                threadInputImage.src = "";
+                let threadBody = document.getElementById("create-thread-body");
+                threadBody.value = '';
+                let deleteButton = document.querySelector("#postThread .modal-body .image-card button");
+                if (deleteButton){
+                    deleteButton.remove();
+                }
+                let parentDiv = threadInputImage.parentElement;
+                parentDiv.style.display = "none";
+            }
+         </script>
     </body>
 </html>
