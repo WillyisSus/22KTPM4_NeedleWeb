@@ -6,27 +6,24 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="profile.css" rel="stylesheet">
+    <link href="/src/profile/profile.css" rel="stylesheet">
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/css/components.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <body>
-    <header>
-        @username
-    </header>
-    <main>
+    <div class="profile-container">
         <div class="d-flex flex-row justify-content-between" style="margin-bottom:10px">
             <div>
                 <h4><b>Display Name</b></h4>
                 Username
             </div>
             <div class="avatar-and-follow-icon">
-                <img data-bs-toggle="modal" data-bs-target="#changeAvatar" src="../images/avatar.png" alt="avatar"
+                <img data-bs-toggle="modal" data-bs-target="#changeAvatar" src="/src/images/avatar.png" alt="avatar"
                     class="border border-1 border-dark rounded-circle" style="width: 66px; height:66px;">
             </div>
         </div>
@@ -39,7 +36,7 @@
                 9,999 followers ● 9,999 following
             </div>
 
-            <a data-bs-toggle="modal" data-bs-target="#editProfile" role="button" class="btn btn-dark col-12 col-md-2"
+            <a data-bs-toggle="modal" data-bs-target="#editProfile" role="button" class="btn btn-dark col-12 col-md-3"
                 style=" margin-top: 10px">
                 Edit Info
             </a>
@@ -55,7 +52,7 @@
 
         <div class="d-flex flex-row justify-content-between" style="padding: 12px 24px">
             <div class="avatar-and-follow-icon">
-                <img src="../images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
+                <img src="/src/images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
                     style="width: 36px; height:36px;">
             </div>
             <div style="padding: 8px; width: 100%;">
@@ -148,8 +145,8 @@
 
                 <div class="modal-content p-2">
                     <div class="modal-header justify-content-center" style="text-align: center;">
-                        <img src="../images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="width: 56px; height:56px;">
+                        <img src="/src/images/avatar.png" alt="avatar"
+                            class="border border-1 border-dark rounded-circle" style="width: 56px; height:56px;">
                     </div>
 
                     <div class="modal-body d-flex flex-column gap-2">
@@ -168,10 +165,7 @@
         </div>
 
 
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
+    </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
@@ -180,12 +174,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+
     <script>
         let modalBodyFollowing;
         let modalBodyFollowers;
         let promises = [];
         ['followers', 'following'].forEach((type) => {
-            promises.push(fetch(`modal-body-${type}.html`));
+            promises.push(fetch(`/src/profile/modal-body-${type}.html`));
         });
         Promise.all(promises).then((responses) => {
             return Promise.all(responses.map((response) => response.text()));
@@ -226,7 +222,8 @@
 
 
     </script>
-    <script src="profile-script.js"></script>
+    <script src="/src/profile/profile-script.js"></script>
+
 
 </body>
 
