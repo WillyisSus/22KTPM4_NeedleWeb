@@ -1,3 +1,70 @@
+
+header{
+    z-index: 100;
+    position: absolute;
+    width: 100vw;
+    top: 30px;
+    width: 100%;
+}
+
+
+.header-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-bar .logo{
+    font-size: 24px;    
+}
+
+.header-bar .user-dropdown-menu{
+    position: absolute;
+    right: 1rem;
+    display: none;
+}
+
+.header-bar .user-dropdown-menu:hover{
+    cursor: pointer;
+}
+.user-dropdown-menu .nav-dropdown{
+    list-style-type: none;
+    z-index: 50;
+    width: 172px;
+    height: 328px;
+    border: 1px solid #aeaeae;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    padding: 12px;
+    top: 0;
+    left: 0;
+    border-radius: 8px 0 0 8px;
+    
+}
+
+
+
+.nav-dropdown .nav-item{
+    margin: 0;
+}
+.nav-dropdown .nav-item .nav-link {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 12px 18px;
+}
+
+.nav a {
+    color: black;
+}
+
+.nav .nav-item .nav-link:hover{
+    color: black !important;
+    background-color: #F0F0F0;
+    border-radius: 8px;
+}
+
 p{
     margin: 0;
 }
@@ -5,19 +72,25 @@ p{
 .comment-card{
     box-shadow: none;
     box-sizing: border-box;
-    width: 60%;
+    width: 100%;
     max-width: 624px;
     min-width: 390px;
+    border-top: 1px solid #aeaeae;
 } 
 
 .nav{
+    z-index: 50;
     width: 30%;
     height: 100vh;
-    width: 219px;
+    min-width: 219px;
     border: 1px solid #aeaeae;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
 }
 
 .nav-item{
@@ -25,7 +98,7 @@ p{
 }
 .nav .nav-item .nav-link {
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 20px;
     padding: 12px 18px;
 }
 
@@ -55,10 +128,60 @@ p{
     border-radius: 100%;
 }
 
-@media only screen and (max-width:720px){
+.thread-container{
+    width: 100%;
+    min-width: 390px;
+    max-width: 624px;
+    background-color: white;
+    height: 90%;
+    margin: 0 auto;
+    border: solid 1px #aeaeae;
+    border-radius: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.thread-container::-webkit-scrollbar{
+    display: none;
+    
+}
+
+#thread-display-section{
+    width: fit-content;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+
+#thread-display-section .dropdown{
+    padding: 12px 0; 
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width:1140px){
+    .nav{
+        width: fit-content;
+        min-width: fit-content;
+    }
+    .nav .nav-item .nav-link{
+        width: fit-content;
+        min-width: fit-content;
+
+    }
+    .nav .nav-item .nav-link span{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:700px){
     .nav{
         width: 100vw;
-        min-height: 55px;
+        min-height: 48px;
         height: fit-content;
         border: 1px solid #aeaeae;
         display: flex;
@@ -66,8 +189,8 @@ p{
         justify-content: center;
         align-items: center;
         position: fixed;
-        bottom: 0;
-        left: 0;
+        top: calc(100% - 48px);
+        left: 0px;
         background-color: #ffffff;
     }
     .nav .nav-item{
@@ -80,5 +203,43 @@ p{
     }
     .nav .nav-item .nav-link span,  .nav .nav-item:last-of-type{
         display: none;
+    }
+
+    .header-bar .user-dropdown-menu{
+        display: block;
+    }
+
+    .thread-container{
+        width: 100%;
+        max-width: 100%;
+        min-width: 390px;
+        background-color: white;
+        height: 90%;
+        margin: 0 auto;
+        border: solid 1px #aeaeae;
+        border-radius: 16px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    
+    .thread-container::-webkit-scrollbar{
+        display: none;
+    }
+    
+    #thread-display-section{
+        width: 100vw;
+        margin: 0 auto;
+        height: calc(100vh - 48px);
+        box-sizing: border-box;
+        padding: 0;
+        
+    }
+    
+    #thread-display-section .dropdown{
+        padding: 12px 0; 
+        font-size: 20px;
+        width: fit-content;
+        margin: 0 auto;
     }
 }
