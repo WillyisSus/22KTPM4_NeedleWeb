@@ -69,15 +69,27 @@ p{
     margin: 0;
 }
 
-.comment-card{
+.thread-card{
     box-shadow: none;
     box-sizing: border-box;
     width: 100%;
-    max-width: 624px;
     min-width: 390px;
+    padding: 12px 24px;
     border-top: 1px solid #aeaeae;
 } 
+ 
+.thread-card .card-content{
+    padding: 8px; 
+    width: 100%;
+}
 
+.thread-card .card-body{
+    margin: 8px 0;
+}
+
+.thread-card .card-footer {
+    padding:8px 0;
+}
 .nav{
     z-index: 50;
     width: 30%;
@@ -133,7 +145,7 @@ p{
     min-width: 390px;
     max-width: 624px;
     background-color: white;
-    height: 90%;
+    height: 100%;
     margin: 0 auto;
     border: solid 1px #aeaeae;
     border-radius: 16px;
@@ -214,10 +226,8 @@ p{
         max-width: 100%;
         min-width: 390px;
         background-color: white;
-        height: 90%;
-        margin: 0 auto;
         border: solid 1px #aeaeae;
-        border-radius: 16px;
+        border-radius: 0;
         overflow-x: hidden;
         overflow-y: scroll;
         scroll-behavior: smooth;
@@ -241,5 +251,8 @@ p{
         font-size: 20px;
         width: fit-content;
         margin: 0 auto;
+    }
+    .comment-card{
+        padding: 12px;
     }
 }
