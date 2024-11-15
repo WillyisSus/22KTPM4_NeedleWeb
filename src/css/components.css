@@ -165,6 +165,10 @@ p{
 
     .header-bar{
         display: block;
+        height: 68px;
+        width: 100vw;
+        position: relative;
+        z-index: 1000;
     }
 
     .comment-card{
@@ -173,11 +177,7 @@ p{
     .navbar-logo{
         display: none;
     }
-    .header-bar {
-        height: 68px;
-        width: 100vw;
-    }
-    
+  
     .header-bar .logo{
         width: 64px;
         height: 64px;
@@ -205,7 +205,7 @@ p{
     }
     .user-dropdown-menu .nav-dropdown{
         list-style-type: none;
-        z-index: 50;
+        z-index: 9999;
         width: 172px;
         height: 328px;
         border: 1px solid #aeaeae;

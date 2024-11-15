@@ -72,6 +72,7 @@
         width: 100%;
         height: fit-content;
         margin: 0 auto;
+        z-index: 1;
         /* display: none; */
     }
 
@@ -81,10 +82,11 @@
     
     #thread-display-section .dropdown-menu{
         display: flex;
-        position: relative;
         border: none;
         width: 100%;
+        position: relative;
         height: fit-content;
+        z-index: 1;
         padding: 0;
 
     }
