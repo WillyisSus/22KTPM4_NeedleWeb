@@ -1,0 +1,105 @@
+.thread-container{
+    width: 100%;
+    min-width: 390px;
+    max-width: 624px;
+    background-color: white;
+    flex-grow: 1;
+    margin: 0 auto;
+    border: solid 1px #aeaeae;
+    border-radius: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.thread-container::-webkit-scrollbar{
+    display: none;
+    
+}
+
+#thread-display-section{
+    width: fit-content;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#thread-display-section .dropdown{
+    padding: 12px 0; 
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width:700px){
+
+    .thread-container{
+        width: 100%;
+        max-width: 100%;
+        min-width: 390px;
+        background-color: white;
+        border-radius: 0;
+        flex-grow: 1;
+        border: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    
+    .thread-container::-webkit-scrollbar{
+        display: none;
+    }
+    
+    #thread-display-section{
+        width: 100vw;
+        margin: 0 auto;
+        height: calc(100vh - 48px - 68px);
+        box-sizing: border-box;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #thread-display-section .dropdown{
+        padding: 0;
+        font-size: 20px;
+        width: 100%;
+        height: fit-content;
+        margin: 0 auto;
+        /* display: none; */
+    }
+
+    #thread-display-section #triggerId{
+        display: none;
+    }
+    
+    #thread-display-section .dropdown-menu{
+        display: flex;
+        position: relative;
+        border: none;
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+
+    }
+    #thread-display-section .dropdown-menu button{
+        border-radius: 0;
+        appearance: block;
+    }
+    #thread-display-section .dropdown-item{
+        padding: 12px 0;
+        border-radius: 0;
+        width: 50%;
+        border-top: solid 1px #aeaeae;
+        border-bottom: solid 1px #aeaeae;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+}
