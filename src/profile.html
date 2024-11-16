@@ -15,6 +15,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/thread-feed-display.css">
+    <link href="/src/profile/profile.css" rel="stylesheet">
 
 </head>
 
@@ -64,181 +65,73 @@
                 data-bs-toggle="modal"
                 data-bs-target="#modalId" -->
         <div id="thread-display-section">
-            <div class="dropdown open">
-                <button class=" bg-white border-0 dropdown-toggle" type="button" id="triggerId"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Following
-                </button>
-                <div class="dropdown-menu" aria-labelledby="triggerId">
-                    <a class="dropdown-item on-active-page" href="#">Following</a>
-                    <a class="dropdown-item" href="for-you-page.html">For you page</a>
-                </div>
-            </div>
-
             <div class="thread-container">
-                <div class="thread-card d-flex flex-row" data-bs-toggle="modal" data-bs-target="#postThread">
-                    <div class="avatar-and-follow-icon align-items-center">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="width: 36px; height:36px;">
+                <div class="profile-container">
+                    <div class="d-flex flex-row justify-content-between" style="margin-bottom:10px">
+                        <div>
+                            <h4><b>Display Name</b></h4>
+                            Username
+                        </div>
+                        <div class="avatar-and-follow-icon">
+                            <img src="/src/images/avatar.png" alt="avatar"
+                                class="border border-1 border-dark rounded-circle" style="width: 66px; height:66px;">
+                        </div>
                     </div>
-                    <div class="card-content border border-0 d-flex justify-content-between align-items-center">
-                        <p>Needle your thread.....</p>
-                        <button type="button" name="" id="" class="btn btn-light border-dark py-1">
-                            Post
-                        </button>
+                    <div>
+                        bio
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="" style="color:grey;">
+                            9,999 followers
+                        </div>
+
+                        <a role="button" class="btn btn-dark col-12 col-md-4" style=" margin-top: 10px"
+                            onclick="followClicked(this)">
+                            Follow @username
+                        </a>
 
                     </div>
-                </div>
-                <div class="thread-card d-flex flex-row">
-                    <div class="avatar-and-follow-icon">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="border-color: #aeaeae;width: 36px; height:36px;">
-                        <i class="follow-icon-avatar bi bi-plus-circle" data-bs-toggle="modal"
-                            data-bs-target="#followPopup"></i>
+
+                    <div
+                        style="text-align: center; border-top: 2px solid lightgray; border-bottom: 2px solid lightgray; padding: 10px 0px; margin: 10px 0px">
+                        Threads of @username
                     </div>
-                    <div class="card-content border border-0">
-                        <div class="card-header border-0 bg-white border-black rounded-0 p-0">
-                            <div class="username-date d-flex justify-content-between">
-                                <span>
-                                    <p class="fw-bold d-inline-block my-0">Username</p>
-                                    <i class="bi bi-clock"></i>
-                                    <span>dd/mm/yyyy</span>
-                                </span>
-                                <i class="bi bi-three-dots"></i>
+
+
+                    <div class="d-flex flex-row justify-content-between" style="padding: 12px 24px">
+                        <div class="avatar-and-follow-icon">
+                            <img src="/src/images/avatar.png" alt="avatar"
+                                class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
+                            <i class="follow-icon-avatar bi bi-plus-circle"></i>
+                        </div>
+                        <div style="padding: 8px; width: 100%;">
+                            <div class="border-0 bg-white border-black rounded-0 p-0">
+                                <div class="username-date d-flex justify-content-between">
+                                    <span>
+                                        <p class="fw-bold d-inline-block my-0">Username</p>
+                                        <i class="bi bi-clock"></i>
+                                        <span>dd/mm/yyyy</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-0" style="margin: 8px 0">
+                                <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-white border-top-0 p-0">
+                                <p class="d-inline-block"><i class="bi bi-chat-left-text"></i> Replies</p>
+                                <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
                             </div>
                         </div>
-                        <div class="card-body p-0">
-                            <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?</div>
+                        <div>
+                            <i class="bi bi-three-dots"></i>
                         </div>
 
-                        <div class="card-footer bg-white border-top-0 p-0">
-                            <p class="d-inline-block" data-bs-toggle="modal" data-bs-target="#replyThread"
-                                onclick="getImageOfThread(event)"><i class="bi bi-chat-left-text"></i> Replies</p>
-                            <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
-                        </div>
                     </div>
 
-                </div>
-                <div class="thread-card d-flex flex-row">
-                    <div class="avatar-and-follow-icon">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="width: 36px; height:36px;">
-                        <i class="follow-icon-avatar bi bi-plus-circle"></i>
-                    </div>
-                    <div class="card-content border border-0">
-                        <div class="card-header border-0 bg-white border-black rounded-0 p-0 ">
-                            <div class="username-date d-flex justify-content-between">
-                                <span>
-                                    <p class="fw-bold d-inline-block my-0">Username</p>
-                                    <i class="bi bi-clock"></i>
-                                    <span>dd/mm/yyyy</span>
-                                </span>
-                                <i class="bi bi-three-dots"></i>
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?</div>
-                            <div class="overflow-hidden rounded-2 border border-1 border-dark" style="margin-top: 8px;">
-                                <img src="images/image_placeholder.jpg" alt="Image of thread" style="width: 100%;">
-                            </div>
-                        </div>
 
-                        <div class="card-footer bg-white border-top-0">
-                            <p class="d-inline-block" data-bs-toggle="modal" data-bs-target="#replyThread"
-                                onclick="getImageOfThread(event)"><i class="bi bi-chat-left-text"></i> Replies</p>
-                            <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="thread-card d-flex flex-row">
-                    <div class="avatar-and-follow-icon">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="border-color: #aeaeae;width: 36px; height:36px;">
-                        <i class="follow-icon-avatar bi bi-plus-circle"></i>
-                    </div>
-                    <div class="card-content border border-0">
-                        <div class="card-header border-0 bg-white border-black rounded-0 p-0">
-                            <div class="username-date d-flex justify-content-between">
-                                <span>
-                                    <p class="fw-bold d-inline-block my-0">Username</p>
-                                    <i class="bi bi-clock"></i>
-                                    <span>dd/mm/yyyy</span>
-                                </span>
-                                <i class="bi bi-three-dots"></i>
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?</div>
-                        </div>
-
-                        <div class="card-footer bg-white border-top-0 p-0">
-                            <p class="d-inline-block" data-bs-toggle="modal" data-bs-target="#replyThread"
-                                onclick="getImageOfThread(event)"><i class="bi bi-chat-left-text"></i> Replies</p>
-                            <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="thread-card d-flex flex-row">
-                    <div class="avatar-and-follow-icon">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="width: 36px; height:36px;">
-                        <i class="follow-icon-avatar bi bi-plus-circle"></i>
-                    </div>
-                    <div class="card-content border border-0">
-                        <div class="card-header border-0 bg-white border-black rounded-0 p-0 ">
-                            <div class="username-date d-flex justify-content-between">
-                                <span>
-                                    <p class="fw-bold d-inline-block my-0">Username</p>
-                                    <i class="bi bi-clock"></i>
-                                    <span>dd/mm/yyyy</span>
-                                </span>
-                                <i class="bi bi-three-dots"></i>
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?</div>
-                            <div class="overflow-hidden rounded-2 border border-1 border-dark" style="margin-top: 8px;">
-                                <img src="images/image_placeholder.jpg" alt="Image of thread" style="width: 100%;">
-                            </div>
-                        </div>
-
-                        <div class="card-footer bg-white border-top-0">
-                            <p class="d-inline-block" data-bs-toggle="modal" data-bs-target="#replyThread"
-                                onclick="getImageOfThread(event)"><i class="bi bi-chat-left-text"></i> Replies</p>
-                            <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="thread-card d-flex flex-row">
-                    <div class="avatar-and-follow-icon">
-                        <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle"
-                            style="border-color: #aeaeae;width: 36px; height:36px;">
-                        <i class="follow-icon-avatar bi bi-plus-circle"></i>
-                    </div>
-                    <div class="card-content border border-0">
-                        <div class="card-header border-0 bg-white border-black rounded-0 p-0">
-                            <div class="username-date d-flex justify-content-between">
-                                <span>
-                                    <p class="fw-bold d-inline-block my-0">Username</p>
-                                    <i class="bi bi-clock"></i>
-                                    <span>dd/mm/yyyy</span>
-                                </span>
-                                <i class="bi bi-three-dots"></i>
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nulla?</div>
-                        </div>
-
-                        <div class="card-footer bg-white border-top-0 p-0">
-                            <p class="d-inline-block" data-bs-toggle="modal" data-bs-target="#replyThread"
-                                onclick="getImageOfThread(event)"><i class="bi bi-chat-left-text"></i> Replies</p>
-                            <p class="d-inline-block"><i class="bi bi-heart"></i> Likes</p>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -457,6 +350,7 @@
 
     <!-- Custom script -->
     <script src="./scripts/createReplyThreadController.js"></script>
+    <script src="/src/profile/profile-script.js"></script>
 </body>
 
 </html>
