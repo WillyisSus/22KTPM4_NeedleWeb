@@ -41,3 +41,27 @@ function getImageOfThread(e){
         repliedThreadInFormImage.parentElement.style.display = "none";
     }
 }
+
+
+
+
+function changeFollowStatus(e){
+    e.preventDefault();
+    let button = e.target;
+    button.className = ((button.innerText == "Following" || button.innerText == "Unfollow" )?  "btn btn-dark": "btn btn-outline-dark");
+    button.innerText =  ((button.innerText == "Following" || button.innerText == "Unfollow" )? "Follow @username" : "Following");
+    if (button.innerText == "Following"){
+        button.onmouseover =  function() {
+            button.innerText = "Unfollow"
+        }
+        button.onmouseleave = function() {
+            button.innerText = "Following"
+        }
+    }else{
+        button.onmouseleave = null;
+        button.onmouseover = null;
+    }
+    
+}
+
+
