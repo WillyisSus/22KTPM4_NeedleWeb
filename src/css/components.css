@@ -29,6 +29,32 @@ p{
     margin: 8px 0;
 }
 
+.notification-card .card-footer {
+    padding:8px 0;
+}
+
+.notification-card {
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 390px;
+    padding: 12px 24px;
+    border-top: 1px solid #aeaeae;
+} 
+ 
+.notification-card  .card-content{
+    padding: 8px; 
+    width: 100%;
+}
+
+.notification-card  .card-body{
+    margin: 8px 0;
+}
+
+.notification-card .dropdown-menu .dropdown-item:active{
+    background-color: #EDEDED;
+}
+
 .thread-card .card-footer {
     padding:8px 0;
 }
@@ -37,6 +63,7 @@ p{
     height: 100vh;
     max-width: 219px;
     position: absolute;
+    background-color: #ffffff;
     top: 0;
     left: 0;
     border: 1px solid #aeaeae;
