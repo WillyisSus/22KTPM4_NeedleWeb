@@ -1,4 +1,4 @@
-followClicked = (e) => {
+function followClicked(e) {
     if (e.innerText.startsWith("Follow")) {
         console.log("Followed");
         e.innerText = e.innerText.replace("Follow", "Unfollow");
@@ -10,3 +10,4 @@ followClicked = (e) => {
         e.classList.add("btn-dark");
     }
 }
+

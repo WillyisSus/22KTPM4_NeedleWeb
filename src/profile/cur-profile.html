@@ -6,6 +6,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Profile CSS -->
     <link href="/src/profile/profile.css" rel="stylesheet">
 
     <!-- Bootstrap CSS v5.2.1 -->
@@ -175,55 +177,9 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
-
-    <script>
-        let modalBodyFollowing;
-        let modalBodyFollowers;
-        let promises = [];
-        ['followers', 'following'].forEach((type) => {
-            promises.push(fetch(`/src/profile/modal-body-${type}.html`));
-        });
-        Promise.all(promises).then((responses) => {
-            return Promise.all(responses.map((response) => response.text()));
-        }).then((texts) => {
-            modalBodyFollowers = new DOMParser().parseFromString(texts[0], 'text/html').body.firstChild;
-            modalBodyFollowing = new DOMParser().parseFromString(texts[1], 'text/html').body.firstChild;
-            let modalBody = document.getElementById('followModalBody');
-            for (let i = 0; i < 5; i++) {
-                modalBody.appendChild(modalBodyFollowers.cloneNode(true));
-            }
-
-            let followersEl = document.getElementById('followersCol');
-            let followingEl = document.getElementById('followingCol');
-            [followersEl, followingEl].forEach((el) => {
-                el.addEventListener('click', () => {
-                    if (el.style.fontWeight === 'bold') {
-                        return;
-                    }
-                    modalBody.innerHTML = '';
-                    el.style.fontWeight = 'bold';
-                    if (el === followersEl) {
-                        followingEl.style.fontWeight = 'normal';
-                        for (let i = 0; i < 5; i++) {
-                            modalBody.appendChild(modalBodyFollowers.cloneNode(true));
-                        }
-                    } else {
-                        followersEl.style.fontWeight = 'normal';
-                        for (let i = 0; i < 5; i++) {
-                            modalBody.appendChild(modalBodyFollowing.cloneNode(true));
-                        }
-                    }
-                });
-            });
-        });
-
-
-
-
-
-    </script>
+    <!-- Profile Script -->
+    <script src="/src/profile/cur-profile-script.js"></script>
     <script src="/src/profile/profile-script.js"></script>
-
 
 </body>
 
