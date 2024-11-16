@@ -59,7 +59,6 @@
 }
 
 
-
 #postThread .modal-body label:hover{
     cursor: pointer;
     background-color: #dfdfdf;
@@ -83,6 +82,39 @@
     max-width: 100%;
 }
 
+
+
+#replyThread .modal-body #reply-thread-body{
+    min-height: 80px;
+    width: 100%;
+    min-width: 340px;
+    padding: 8px 4px;
+    border: 0;
+}
+
+#replyThread .modal-body #reply-thread-body:focus{
+    min-height: 80px;
+    width: 100%;
+    min-width: 340px;
+    outline: 0;
+    padding: 8px 4px;
+    box-sizing: border-box;
+}
+
+.avatar-is-replied{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.vertical-reply-bar{
+    width: 2px;
+    flex-grow: 1;
+    transform: translateX(-80%);
+    background-color: #aeaeae;
+}
 @media only screen and (max-width:760px){
 
     .thread-container{
