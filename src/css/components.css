@@ -122,11 +122,11 @@ p{
 }
 
 .avatar-and-follow-icon{
-    display: flex;
-    flex-direction: row;
+   position: relative;
 }
 
 .follow-icon-avatar{
+    position: absolute;
     margin-top: 20px;
     margin-left: -12px;
     background-color: white;
