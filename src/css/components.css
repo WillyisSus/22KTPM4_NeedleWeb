@@ -10,7 +10,9 @@ p{
     margin: 0;
 }
 
-
+#post-thread-trigger:hover{
+    cursor: pointer;
+}
 .thread-card{
     box-shadow: none;
     box-sizing: border-box;
@@ -27,6 +29,10 @@ p{
 
 .thread-card .card-body{
     margin: 8px 0;
+}
+
+.thread-card .card-body:hover, .thread-card .card-header{
+    cursor: pointer;
 }
 
 .notification-card .card-footer {
@@ -125,6 +131,9 @@ p{
    position: relative;
 }
 
+.avatar-and-follow-icon i:hover{
+    cursor: pointer;
+}
 .follow-icon-avatar{
     position: absolute;
     margin-top: 20px;
