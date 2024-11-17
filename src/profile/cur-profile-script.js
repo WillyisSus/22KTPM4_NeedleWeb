@@ -2,7 +2,7 @@ let modalBodyFollowing;
 let modalBodyFollowers;
 let promises = [];
 ['followers', 'following'].forEach((type) => {
-    promises.push(fetch(`/src/profile/modal-body-${type}.html`));
+    promises.push(fetch(`./profile/modal-body-${type}.html`));
 });
 Promise.all(promises).then((responses) => {
     return Promise.all(responses.map((response) => response.text()));
