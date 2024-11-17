@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Notifications - Needle</title>
+        <title>Needle - Notifications</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -33,29 +33,29 @@
                 </div>
                 <ul class="nav" >
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-house-door-fill"></i> <span>Home</span></a>
+                        <a class="nav-link active" href="./home-feed.html" aria-current="page"><i class="bi bi-house-door-fill"></i> <span>Home</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-search"></i> <span>Search</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-plus-lg"></i> <span>Post</span></a>
+                        <a class="nav-link active" href="" data-bs-toggle="modal" data-bs-target="#postThread" aria-current="page"><i class="bi bi-plus-lg"></i> <span>Post</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-bell-fill"></i> <span>Notification</span></a>
+                        <a class="nav-link active" href="./notifications.html" aria-current="page"><i class="bi bi-bell-fill"></i> <span>Notification</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-person-circle"></i> <span>Profile</span></a>
+                        <a class="nav-link active" href="./cur-profile.html" aria-current="page"><i class="bi bi-person-circle"></i> <span>Profile</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-arrow-bar-left"></i> <span>Logout</span></a>
+                        <a class="nav-link active" href="./index.html" aria-current="page"><i class="bi bi-arrow-bar-left"></i> <span>Logout</span></a>
                     </li>
                 </ul>
             </div>
             <!-- Thread area -->
             <div id="thread-display-section">
                 <div class="thread-container">
-                    <div class="notification-card d-flex flex-row">
+                    <div class="notification-card d-flex flex-row" >
                         <div class="notification-category">
                             <i class="bi bi-chat" style="font-size: 2em; color: #000000;"></i>
                         </div>
@@ -65,7 +65,9 @@
                                     <span>
                                     <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
+                                    <div>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -79,6 +81,9 @@
                                             <button class="dropdown-item text-danger" href="#"><i class="bi bi-x-lg" style="font-size: 1rem;"></i> Remove notifications</button>
                                         </div>
                                     </div>
+                                    </div>  
+
+                                    
                                 </div> 
                             </div>
                             <div class="card-body p-0">
@@ -97,6 +102,7 @@
                                     <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -162,6 +168,7 @@
                                         <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -194,6 +201,7 @@
                                         <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -226,6 +234,7 @@
                                     <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -291,6 +300,7 @@
                                     <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -322,6 +332,7 @@
                                         <img src="images/avatar.png" alt="avatar" class="border border-1 border-dark rounded-circle" style="width: 36px; height:36px;">
                                     </span>
                                     <div class="dropdown open">
+                                        <a class="btn btn-light" href="./thread.html"><i class="bi bi-arrow-right"></i></a>
                                         <button class="btn btn-light"
                                             type="button"
                                             id="triggerId"
@@ -438,7 +449,7 @@
                             >
                                 Close
                             </button>
-                            <button type="button" class="btn btn-dark">Post</button>
+                            <button type="button" id="liveToastBtn" data-bs-dismiss="modal" onclick="closeModalAndTriggerToast(event)" class="btn btn-dark">Post</button>
                         </div>
                     </div>
                 </div>
@@ -590,7 +601,19 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="toast-container bottom-0 mb-2 start-50 translate-middle-x" >
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                    <img src="./images/svg/logo.svg" class="me-2" alt="..." width="36px" height="36px">
+                    <strong class="me-auto">Your thread is needled</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        <a type="button" class="btn btn-dark btn-sm" href="./thread.html">View now</a>
+                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="toast">Later</button>
+                    </div>
+                </div>
+            </div>
             <!-- <script>
                 var modalId = document.getElementById('modalId');
             

@@ -26,6 +26,10 @@
                 display: flex;
                 width: 50%;
             }
+            #image-place img{
+                object-fit: contain;
+                width: 100%;
+            }
             #form-section{
                 align-content: center;
                 box-sizing: content-box;
@@ -54,16 +58,18 @@
                     justify-content: center;
                     padding: 0 3rem 2rem 3rem;
                     width: 100%;
+                    min-width: 360px;
                     height: 25%;
                 }
                 #image-place img{
-                    object-fit: cover;
-                    width: 75%;
+                    object-fit:contain;
+                    width: 100%;
                 }
                 #form-section{
                     height: 75%;
                     padding: 0;
                     width: 50%;
+                    min-width: 360px;
                 }
             }
         </style>
@@ -86,9 +92,9 @@
                 <div class="container" id="form-section">
                     <h1>Welcome back 👋🏿</h1>
                     <br>
-                    <h5>Today is a new day. It's your day. You shape it. Sign in to start managing your projects.</h5>
+                    <h5>Today is a new day. It's your day. You shape it. Sign in to start managing your threads.</h5>
                     <br>
-                    <form>
+                    <form action="javascript:window.location.href='./home-feed.html'">
                         <div class="mb-3 row">
                             <label
                                 for="Email"
@@ -118,7 +124,7 @@
                                     aria-describedby="loginHelpId"
                                     placeholder="At least 8 characters"
                                 />
-                                <small id="loginHelpId" class="form-text text-muted">Forgot Password?</small>
+                                <small id="loginHelpId" class="form-text text-muted"><a class="text-decoration-none text-dark-emphasis" href="./forgetpw.html">Forgot Password?</a></small>
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -130,7 +136,7 @@
                         </div>
                     </form>
                     <br>
-                    <p>Are you new to our site? Sign up</p>
+                    <p>Are you new to our site? <a href="./signup.html" class="text-decoration-none">Sign up</a></p>
                 </div>                  
             </div>           
         </main>

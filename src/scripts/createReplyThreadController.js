@@ -64,4 +64,12 @@ function changeFollowStatus(e){
     
 }
 
+function closeModalAndTriggerToast(e){
+    e.preventDefault();
+    const toastLiveExample = document.getElementById('liveToast')
+    setTimeout(()=>{    
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+    }, 1500)
+}
 

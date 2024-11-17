@@ -26,6 +26,10 @@
                 display: flex;
                 width: 50%;
             }
+            #image-place img{
+                object-fit: contain;
+                width: 100%;
+            }
             #form-section{
                 align-content: center;
                 box-sizing: content-box;
@@ -53,15 +57,14 @@
                     display: flex;
                     justify-content: center;
                     padding: 0 3rem 2rem 3rem;
+                    min-width: 360px;
                     width: 100%;
                     height: 25%;
                 }
-                #image-place img{
-                    object-fit: cover;
-                    width: 75%;
-                }
+
                 #form-section{
                     height: 75%;
+                    min-width: 360px;
                     padding: 0;
                     width: 50%;
                 }
@@ -86,9 +89,9 @@
                 <div class="container" id="form-section">
                     <h1>Welcome friends 🫱🏿‍🫲🏻</h1>
                     <br>
-                    <h5>Today is a new day. It's your day. You shape it. Sign in to start managing your projects.</h5>
+                    <h5>Today is a new day. It's your day. You shape it. Sign in to start managing your threads.</h5>
                     <br>
-                    <form>
+                    <form action="javascript:window.location.href='./home-feed.html'">
                         <div class="mb-3 row">
                             <label
                                 for="Username"
@@ -143,7 +146,7 @@
                         </div>
                     </form>
                     <br>
-                    <p>Do you have an account? Sign in</p>
+                    <p>Do you have an account? <a href="./login.html" class="text-decoration-none">Sign in</a></p>
                 </div>                  
             </div>           
         </main>

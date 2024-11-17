@@ -151,4 +151,7 @@ div.notification-card.d-flex.flex-row{
         border-top: solid 1px #000000;
         border-bottom: solid 1px #000000;
     }
+    div.notification-card.d-flex.flex-row{
+        min-width: 100vw;
+    }
 }

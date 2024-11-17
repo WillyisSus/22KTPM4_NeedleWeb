@@ -137,7 +137,14 @@ p{
     border-radius: 100%;
 }
 
+.desktop-navbar .nav-current{ 
+    background-color: #DEDEDE;
+}
 
+.card-footer p.d-inline-block:hover{
+    cursor: pointer;
+
+}
 @media only screen and (max-width:1140px){
     .desktop-navbar{
         width: fit-content;
